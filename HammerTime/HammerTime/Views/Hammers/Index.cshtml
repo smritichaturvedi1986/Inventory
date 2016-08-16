@@ -1,0 +1,39 @@
+﻿@model IEnumerable<HammerTime.Models.Hammer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Hammers Time Inventory Management</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Size)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.type)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Size)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.type)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.HammerId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.HammerId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.HammerId })
+        </td>
+    </tr>
+}
+
+</table>

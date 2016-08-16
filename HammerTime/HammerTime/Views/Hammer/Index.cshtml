@@ -1,0 +1,11 @@
+﻿@model IEnumerable<HammerTime.Models.Hammer>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@foreach (var item in Model)
+{ 
+<h2> Hammers Data: @item.Size  and @item.type</h2>
+}
+
